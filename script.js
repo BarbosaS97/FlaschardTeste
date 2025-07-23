@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const progressElement = document.getElementById('progress');
     const toggleFocusModeBtn = document.getElementById('toggleFocusMode');
     const body = document.body;
+    const controlsDiv = document.querySelector('.controls');
     
     // Variáveis de estado
     let currentDeck = [];
@@ -31,6 +32,18 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Configura eventos
         setupEventListeners();
+        
+        // Adiciona instruções de teclado
+        addKeyboardInstructions();
+    }
+    
+    function addKeyboardInstructions() {
+        const instructions = document.createElement('div');
+        instructions.className = 'keyboard-instructions';
+        instructions.innerHTML = `
+            <small>Teclas: <strong>V</strong> (Voltar) | <strong>B</strong> (Avançar) | <strong>Espaço</strong> (Girar)</small>
+        `;
+        controlsDiv.insertAdjacentElement('afterend', instructions);
     }
     
     function loadSubjects() {
@@ -197,11 +210,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleKeyPress(e) {
         if (flashcardContainer.classList.contains('hidden')) return;
         
-        switch(e.key) {
-            case 'ArrowLeft':
+        switch(e.key.toLowerCase()) {
+            case 'v':
                 showPreviousCard();
                 break;
-            case 'ArrowRight':
+            case 'b':
                 showNextCard();
                 break;
             case ' ':
@@ -209,7 +222,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.preventDefault();
                 break;
             case 'f':
-            case 'F':
                 toggleFocusMode();
                 break;
         }
