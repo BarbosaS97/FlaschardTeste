@@ -524,3 +524,22 @@ body.focus-mode #backToSubjects:hover {
 body.focus-mode {
     background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1a 100%);
 }
+/* Keyboard Instructions */
+.keyboard-instructions {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--text-light);
+    font-size: 0.8rem;
+}
+
+body.focus-mode .keyboard-instructions {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.keyboard-instructions strong {
+    color: var(--primary-color);
+}
+
+body.focus-mode .keyboard-instructions strong {
+    color: var(--focus-color);
+}
