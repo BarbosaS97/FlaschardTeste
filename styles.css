@@ -92,10 +92,6 @@ body.focus-mode .app-container {
     font-weight: 700;
     font-size: 2rem;
     letter-spacing: -0.5px;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .subject-list {
@@ -205,27 +201,6 @@ button:focus {
     font-size: 1.1rem;
     padding: 1.1rem;
     font-weight: 600;
-    position: relative;
-    overflow: hidden;
-}
-
-#startStudying::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, 
-        rgba(255,255,255,0) 0%, 
-        rgba(255,255,255,0.2) 50%, 
-        rgba(255,255,255,0) 100%);
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
-}
-
-#startStudying:hover::after {
-    transform: translateX(100%);
 }
 
 .hidden {
@@ -262,11 +237,6 @@ button:focus {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-}
-
-.progress::before {
-    content: '📊';
-    font-size: 1rem;
 }
 
 body.focus-mode .progress {
@@ -387,29 +357,6 @@ body.focus-mode .answer {
     color: rgba(233, 236, 239, 0.9);
 }
 
-/* Ícones de canto */
-.flashcard-front::after,
-.flashcard-back::after {
-    content: '?';
-    position: absolute;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    font-size: 1.5rem;
-    color: rgba(0, 0, 0, 0.05);
-    font-weight: 800;
-}
-
-.flashcard-back::after {
-    content: '!';
-    left: 1.5rem;
-    right: auto;
-}
-
-body.focus-mode .flashcard-front::after,
-body.focus-mode .flashcard-back::after {
-    color: rgba(255, 255, 255, 0.05);
-}
-
 /* Controls */
 .controls {
     display: flex;
@@ -460,24 +407,6 @@ body.focus-mode .focus-btn:hover {
     color: var(--darker-color);
     box-shadow: var(--shadow-focus);
     border-color: var(--focus-color);
-}
-
-.focus-btn.active:hover {
-    background-color: var(--focus-color);
-}
-
-.focus-btn i {
-    margin-right: 0.5rem;
-}
-
-body.focus-mode button:not(.focus-btn) {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-body.focus-mode button:not(.focus-btn):hover {
-    background-color: rgba(255, 255, 255, 0.25);
 }
 
 /* Back Button */
@@ -570,17 +499,6 @@ body.focus-mode #backToSubjects:hover {
     .controls {
         flex-direction: column;
     }
-    
-    .flashcard-front::after,
-    .flashcard-back::after {
-        bottom: 1rem;
-        right: 1rem;
-        font-size: 1.25rem;
-    }
-    
-    .flashcard-back::after {
-        left: 1rem;
-    }
 }
 
 /* No Subjects Message */
@@ -605,33 +523,4 @@ body.focus-mode #backToSubjects:hover {
 /* Focus Mode Enhancements */
 body.focus-mode {
     background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1a 100%);
-}
-
-/* Efeito de digitação no modo foco */
-.flashcard-front .question::after,
-.flashcard-back .answer::after {
-    content: '|';
-    animation: blink 1s step-end infinite;
-    opacity: 0;
-}
-
-body.focus-mode .flashcard-front .question::after,
-body.focus-mode .flashcard-back .answer::after {
-    opacity: 1;
-}
-
-@keyframes blink {
-    from, to { opacity: 0; }
-    50% { opacity: 1; }
-}
-
-/* Pulsação no botão de foco ativo */
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(76, 201, 240, 0.4); }
-    70% { box-shadow: 0 0 0 12px rgba(76, 201, 240, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(76, 201, 240, 0); }
-}
-
-body.focus-mode .focus-btn.active {
-    animation: pulse 2s infinite;
 }
