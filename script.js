@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let difficultCards = [];
     let selectedSubjects = [];
     let isFocusMode = false;
+    let cardNotes = JSON.parse(localStorage.getItem('cardNotes')) || {};
+    let isNoteOpen = false;
     
     // Inicialização
     init();
@@ -41,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const instructions = document.createElement('div');
         instructions.className = 'keyboard-instructions';
         instructions.innerHTML = `
-            <small>Teclas: <strong>V</strong> (Voltar) | <strong>B</strong> (Avançar) | <strong>Espaço</strong> (Girar)</small>
+            <small>Teclas: <strong>V</strong> (Voltar) | <strong>B</strong> (Avançar) | <strong>Espaço</strong> (Girar) | <strong>N</strong> (Notas)</small>
         `;
         controlsDiv.insertAdjacentElement('afterend', instructions);
     }
@@ -51,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         subjectList.innerHTML = '';
         
         // Verifica se existem matérias definidas
-        if (!flashcardsData || Object.keys(flashcardsData).length === 0) {
+        if (typeof flashcardsData === 'undefined' || Object.keys(flashcardsData).length === 0) {
             subjectList.innerHTML = '<p class="no-subjects">Nenhuma matéria disponível. Por favor, adicione matérias no arquivo questions.js</p>';
             return;
         }
@@ -130,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function flipCard() {
+        if (isNoteOpen) return;
         flashcard.classList.toggle('flipped');
     }
     
@@ -152,24 +155,133 @@ document.addEventListener('DOMContentLoaded', function() {
         if (flashcard.classList.contains('flipped')) {
             flashcard.classList.remove('flipped');
         }
+        
+        // Adicionar ou atualizar o ícone de notas
+        addNoteIcon();
+    }
+    
+    function addNoteIcon() {
+        // Remove o ícone existente se houver
+        const existingIcon = document.querySelector('.note-icon');
+        if (existingIcon) {
+            existingIcon.remove();
+        }
+        
+        const existingContainer = document.querySelector('.note-container');
+        if (existingContainer) {
+            existingContainer.remove();
+        }
+        
+        // Cria o ícone de notas
+        const noteIcon = document.createElement('div');
+        noteIcon.className = 'note-icon';
+        noteIcon.innerHTML = '📝';
+        
+        // Verifica se há anotação para este card
+        const cardId = getCurrentCardId();
+        if (cardNotes[cardId] && cardNotes[cardId].trim() !== '') {
+            noteIcon.classList.add('has-note');
+        }
+        
+        // Adiciona o ícone ao flashcard
+        flashcard.appendChild(noteIcon);
+        
+        // Cria o container de notas
+        const noteContainer = document.createElement('div');
+        noteContainer.className = 'note-container';
+        noteContainer.innerHTML = `
+            <h3>Anotações</h3>
+            <textarea placeholder="Digite suas anotações sobre este card..." id="noteTextarea">${cardNotes[cardId] || ''}</textarea>
+            <button id="saveNote">Salvar Anotações</button>
+        `;
+        
+        // Adiciona o container ao body principal
+        document.querySelector('.app-container').appendChild(noteContainer);
+        
+        // Posiciona o container de notas corretamente
+        positionNoteContainer(noteContainer);
+        
+        // Configura eventos
+        noteIcon.addEventListener('click', function(e) {
+            e.stopPropagation();
+            isNoteOpen = !noteContainer.classList.toggle('active');
+            if (isNoteOpen) {
+                document.getElementById('noteTextarea').focus();
+            }
+        });
+        
+        document.getElementById('saveNote').addEventListener('click', function(e) {
+            e.stopPropagation();
+            saveNote();
+        });
+        
+        // Fecha as notas ao clicar fora
+        document.addEventListener('click', function(e) {
+            if (!noteContainer.contains(e.target) && e.target !== noteIcon) {
+                noteContainer.classList.remove('active');
+                isNoteOpen = false;
+            }
+        });
+        
+        // Previne que eventos de teclado no textarea interfiram com os controles
+        document.getElementById('noteTextarea').addEventListener('keydown', function(e) {
+            e.stopPropagation();
+        });
+    }
+    
+    function positionNoteContainer(container) {
+        // Posiciona o container de notas de forma consistente em ambos os modos
+        container.style.position = 'absolute';
+        container.style.top = '50%';
+        container.style.left = '50%';
+        container.style.transform = 'translate(-50%, -50%)';
+        container.style.width = '350px';
+        container.style.maxWidth = '90%';
+        container.style.zIndex = '20';
+    }
+    
+    function getCurrentCardId() {
+        const card = currentDeck[currentCardIndex];
+        return `${selectedSubjects.join('-')}-${card.question.substring(0, 20)}`;
+    }
+    
+    function saveNote() {
+        const cardId = getCurrentCardId();
+        const noteText = document.querySelector('.note-container textarea').value;
+        cardNotes[cardId] = noteText;
+        
+        // Atualiza o ícone
+        const noteIcon = document.querySelector('.note-icon');
+        if (noteText.trim() !== '') {
+            noteIcon.classList.add('has-note');
+        } else {
+            noteIcon.classList.remove('has-note');
+        }
+        
+        // Esconde o container
+        document.querySelector('.note-container').classList.remove('active');
+        isNoteOpen = false;
+        
+        // Salva no localStorage
+        localStorage.setItem('cardNotes', JSON.stringify(cardNotes));
     }
     
     function showNextCard() {
-        if (currentDeck.length === 0) return;
+        if (currentDeck.length === 0 || isNoteOpen) return;
         
         currentCardIndex = (currentCardIndex + 1) % currentDeck.length;
         showCurrentCard();
     }
     
     function showPreviousCard() {
-        if (currentDeck.length === 0) return;
+        if (currentDeck.length === 0 || isNoteOpen) return;
         
         currentCardIndex = (currentCardIndex - 1 + currentDeck.length) % currentDeck.length;
         showCurrentCard();
     }
     
     function markAsDifficult() {
-        if (currentDeck.length === 0) return;
+        if (currentDeck.length === 0 || isNoteOpen) return;
         
         const currentCard = currentDeck[currentCardIndex];
         
@@ -186,6 +298,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function toggleFocusMode() {
+        if (isNoteOpen) return;
+        
         if (isFocusMode) {
             disableFocusMode();
         } else {
@@ -208,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function handleKeyPress(e) {
-        if (flashcardContainer.classList.contains('hidden')) return;
+        if (flashcardContainer.classList.contains('hidden') || isNoteOpen) return;
         
         switch(e.key.toLowerCase()) {
             case 'v':
@@ -224,6 +338,13 @@ document.addEventListener('DOMContentLoaded', function() {
             case 'f':
                 toggleFocusMode();
                 break;
+            case 'n':
+                const noteIcon = document.querySelector('.note-icon');
+                if (noteIcon) {
+                    noteIcon.click();
+                    isNoteOpen = true;
+                }
+                break;
         }
     }
     
@@ -236,6 +357,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, false);
         
         flashcard.addEventListener('touchend', function(e) {
+            if (isNoteOpen) return;
             touchEndX = e.changedTouches[0].screenX;
             handleSwipe();
         }, false);
