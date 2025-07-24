@@ -3,21 +3,21 @@ const flashcardsData = {
     portugues: {
         name: "Língua Portuguesa",
         questions: [
-{ question: "O que caracteriza um texto dissertativo-argumentativo?", answer: "Apresenta uma tese ou opinião sobre um tema, defendida com argumentos e exemplos." },
-{ question: "Qual a diferença entre coesão e coerência textual?", answer: "Coesão refere-se aos elementos que conectam o texto; coerência é a lógica e sentido geral do texto." },
-{ question: "Para que serve o uso dos conectores em um texto?", answer: "Para organizar as ideias e estabelecer relações entre orações e parágrafos." },
-{ question: "O que é substituição no contexto da coesão textual?", answer: "É o uso de palavras que substituem termos já mencionados para evitar repetição." },
-{ question: "Explique o uso correto do sinal indicativo de crase.", answer: "É usado na fusão da preposição 'a' com o artigo feminino 'a' ou com pronomes demonstrativos que aceitam a preposição." },
-{ question: "Qual a diferença entre regência verbal e regência nominal?", answer: "Regência verbal trata da relação entre verbo e seus complementos; regência nominal, entre nome e seus complementos." },
-{ question: "O que são pronomes átonos e como devem ser colocados na frase?", answer: "São pronomes oblíquos sem ênfase e geralmente devem ficar ligados ao verbo, em próclise, mesóclise ou ênclise." },
-{ question: "Qual a importância da reescrita de textos na comunicação?", answer: "Permite aprimorar clareza, coerência e correção, adequando o texto ao público e objetivo." },
-{ question: "O que é a progressão temática em um texto?", answer: "É a forma como os temas são desenvolvidos e relacionados ao longo do texto para manter a coesão." },
-{ question: "Dê um exemplo de conjunção subordinativa causal e explique seu uso.", answer: "Exemplo: 'porque'. Indica causa ou motivo na oração subordinada." },
-{ question: "Qual a diferença entre verbo transitivo direto e indireto?", answer: "Verbo transitivo direto exige objeto direto; indireto, exige objeto indireto com preposição." },
-{ question: "O que é uma oração coordenada sindética?", answer: "Oração ligada a outra por conjunção coordenativa, como 'e', 'mas', 'ou'." },
-{ question: "Como identificar o sujeito oculto em uma oração?", answer: "Quando o sujeito não aparece explicitamente, mas pode ser identificado pelo contexto ou pela desinência verbal." },
-{ question: "O que caracteriza o uso da vírgula em uma enumeração?", answer: "Separa elementos de uma lista para facilitar a compreensão do texto." },
-{ question: "Explique a diferença entre ambiguidade e polissemia.", answer: "Ambiguidade é quando uma frase pode ter dois sentidos diferentes; polissemia é quando uma palavra tem vários significados." },
+            { question: "O que caracteriza um texto dissertativo-argumentativo?", answer: "Apresenta uma tese ou opinião sobre um tema, defendida com argumentos e exemplos." },
+            { question: "Qual a diferença entre coesão e coerência textual?", answer: "Coesão refere-se aos elementos que conectam o texto; coerência é a lógica e sentido geral do texto." },
+            { question: "Para que serve o uso dos conectores em um texto?", answer: "Para organizar as ideias e estabelecer relações entre orações e parágrafos." },
+            { question: "O que é substituição no contexto da coesão textual?", answer: "É o uso de palavras que substituem termos já mencionados para evitar repetição." },
+            { question: "Explique o uso correto do sinal indicativo de crase.", answer: "É usado na fusão da preposição 'a' com o artigo feminino 'a' ou com pronomes demonstrativos que aceitam a preposição." },
+            { question: "Qual a diferença entre regência verbal e regência nominal?", answer: "Regência verbal trata da relação entre verbo e seus complementos; regência nominal, entre nome e seus complementos." },
+            { question: "O que são pronomes átonos e como devem ser colocados na frase?", answer: "São pronomes oblíquos sem ênfase e geralmente devem ficar ligados ao verbo, em próclise, mesóclise ou ênclise." },
+            { question: "Qual a importância da reescrita de textos na comunicação?", answer: "Permite aprimorar clareza, coerência e correção, adequando o texto ao público e objetivo." },
+            { question: "O que é a progressão temática em um texto?", answer: "É a forma como os temas são desenvolvidos e relacionados ao longo do texto para manter a coesão." },
+            { question: "Dê um exemplo de conjunção subordinativa causal e explique seu uso.", answer: "Exemplo: 'porque'. Indica causa ou motivo na oração subordinada." },
+            { question: "Qual a diferença entre verbo transitivo direto e indireto?", answer: "Verbo transitivo direto exige objeto direto; indireto, exige objeto indireto com preposição." },
+            { question: "O que é uma oração coordenada sindética?", answer: "Oração ligada a outra por conjunção coordenativa, como 'e', 'mas', 'ou'." },
+            { question: "Como identificar o sujeito oculto em uma oração?", answer: "Quando o sujeito não aparece explicitamente, mas pode ser identificado pelo contexto ou pela desinência verbal." },
+            { question: "O que caracteriza o uso da vírgula em uma enumeração?", answer: "Separa elementos de uma lista para facilitar a compreensão do texto." },
+            { question: "Explique a diferença entre ambiguidade e polissemia.", answer: "Ambiguidade é quando uma frase pode ter dois sentidos diferentes; polissemia é quando uma palavra tem vários significados." },
             { question: "O que é um texto dissertativo?", answer: "É um texto que apresenta uma opinião ou argumento sobre um tema." },
             { question: "Qual é o objetivo de um texto narrativo?", answer: "Contar uma história com personagens, tempo e espaço definidos." },
             { question: "Qual é a função do pronome relativo?", answer: "Substituir um termo anterior e iniciar uma oração subordinada." },
@@ -102,28 +102,630 @@ const flashcardsData = {
             { question: "O que são figuras de som?", answer: "Recursos como aliteração, assonância e onomatopeia." },
             { question: "O que é parônimia contextual?", answer: "Uso de palavras parônimas com sentidos distintos pelo contexto." },
             { question: "O que é predicado oculto?", answer: "Quando a ação está implícita e não declarada." },
-            { question: "O que é sujeito composto por justaposição?", answer: "Quando dois ou mais termos formam o sujeito sem conectivo." }
+            { question: "O que é sujeito composto por justaposição?", answer: "Quando dois ou mais termos formam o sujeito sem conectivo." },
+            // New questions from Questões 4.docx
+            { question: "Qual a diferença entre oração subordinada adverbial causal e concessiva?", answer: "A causal indica motivo (ex: 'porque choveu'); a concessiva expressa contraste com o esperado (ex: 'embora chovesse')." },
+            { question: "Como o paralelismo sintático contribui para a coesão textual?", answer: "Mantém a simetria entre os elementos de mesma função, facilitando a leitura e compreensão do texto." },
+            { question: "O que é discurso indireto livre e onde costuma ser empregado?", answer: "Mistura a fala do narrador com a do personagem, sem marcas formais; comum em narrativas modernas." },
+            { question: "Quando a crase é obrigatória antes de pronomes demonstrativos?", answer: "Quando o termo exige preposição 'a' e o pronome começa com 'a', como em 'àquela altura'." },
+            { question: "Como a polissemia pode gerar ambiguidade num texto?", answer: "Quando uma palavra tem múltiplos significados e o contexto não deixa claro qual sentido usar." },
+            { question: "O que caracteriza uma oração subordinada adverbial condicional?", answer: "Introduz uma condição para que a ação da principal se realize, usando 'se', 'caso', etc." },
+            { question: "O que é predicado verbo-nominal?", answer: "Aquele que possui dois núcleos: um verbo significativo e um nome que atribui característica ao sujeito ou ao objeto." },
+            { question: "Em qual situação a vírgula pode mudar completamente o sentido da frase?", answer: "Quando altera a função do termo (ex: 'Não, espere.' vs. 'Não espere.')." },
+            { question: "O que é catáfora e como se diferencia da anáfora?", answer: "Catáfora antecipa um termo ainda não mencionado; anáfora retoma algo já citado." },
+            { question: "Quando se deve usar o ponto e vírgula?", answer: "Para separar orações com certa independência ou itens complexos dentro de uma enumeração." },
+            { question: "Qual a diferença entre coesão lexical e coesão referencial?", answer: "Lexical usa sinônimos/repetições; referencial retoma termos com pronomes ou elipses." },
+            { question: "O que é ambiguidade estrutural?", answer: "Quando a organização sintática permite mais de uma interpretação." },
+            { question: "O que caracteriza um período composto por subordinação?", answer: "Possui uma oração principal e outra(s) que dependem dela para fazer sentido." },
+            { question: "O que são conjunções adversativas e qual sua função?", answer: "Conectam ideias opostas, como 'mas', 'porém', 'contudo'." },
+            { question: "Quando ocorre erro de regência verbal com o verbo 'assistir'?", answer: "Quando usado sem a preposição exigida: o correto é 'assistir ao filme'." }
+        ],
+        multipleChoice: [
+            {
+                question: "Em qual opção o texto apresenta linguagem mais formal?",
+                options: [
+                    "E aí, tudo certo?",
+                    "Bora resolver isso logo.",
+                    "Informo que a reunião ocorrerá às 14h.",
+                    "Tá tudo tranquilo por aqui.",
+                    "Vamos nessa?"
+                ],
+                answer: 2,
+                explanation: "Frase objetiva, sem gírias, com linguagem apropriada para contexto formal."
+            },
+            {
+                question: "Qual frase apresenta erro de ortografia?",
+                options: [
+                    "Exceção",
+                    "Cansasso",
+                    "Ansiedade",
+                    "Necessário",
+                    "Difícil"
+                ],
+                answer: 1,
+                explanation: "O correto é 'cansaço', com apenas um 's'."
+            },
+            {
+                question: "Em 'Ele saiu cedo, porque estava cansado.', a palavra 'porque' indica:",
+                options: [
+                    "Tempo",
+                    "Condição",
+                    "Finalidade",
+                    "Causa",
+                    "Concessão"
+                ],
+                answer: 3,
+                explanation: "'Porque' indica o motivo da saída: ele estava cansado."
+            },
+            {
+                question: "Qual é o sujeito da frase: 'Chegaram tarde ao evento'?",
+                options: [
+                    "Evento",
+                    "Eles",
+                    "Tarde",
+                    "Chegaram",
+                    "Não há sujeito"
+                ],
+                answer: 1,
+                explanation: "O sujeito está oculto - 'eles'."
+            },
+            {
+                question: "Assinale a frase com concordância verbal correta:",
+                options: [
+                    "Houveram muitos problemas.",
+                    "Existe pessoas esperando.",
+                    "Faltou cadeiras no salão.",
+                    "Chegaram os documentos.",
+                    "Haviam crianças na rua."
+                ],
+                answer: 3,
+                explanation: "Verbo concorda com 'os documentos' (plural)."
+            },
+            {
+                question: "A alternativa com pronome átono mal empregado é:",
+                options: [
+                    "Entreguei-lhe o presente.",
+                    "Viu-me na festa.",
+                    "Chamaram-me para reunião.",
+                    "Me empresta seu carro?",
+                    "Apresentei-me ao diretor."
+                ],
+                answer: 3,
+                explanation: "No início da frase o correto seria 'Empresta-me...', pois pronomes átonos não iniciam orações formais."
+            },
+            {
+                question: "'Contudo', 'entretanto' e 'porém' são conectores que indicam:",
+                options: [
+                    "Causa",
+                    "Comparação",
+                    "Concessão",
+                    "Adição",
+                    "Oposição"
+                ],
+                answer: 4,
+                explanation: "São conectivos adversativos, indicando oposição."
+            },
+            {
+                question: "Em qual alternativa há erro na regência verbal?",
+                options: [
+                    "Aspirava a um cargo melhor.",
+                    "Assistia ao jogo.",
+                    "Cheguei na escola cedo.",
+                    "Preferia doce a salgado.",
+                    "Obedeceu às ordens."
+                ],
+                answer: 2,
+                explanation: "O correto é 'Cheguei à escola', com crase."
+            },
+            {
+                question: "O termo 'ainda que' estabelece ideia de:",
+                options: [
+                    "Causa",
+                    "Condição",
+                    "Concessão",
+                    "Finalidade",
+                    "Comparação"
+                ],
+                answer: 2,
+                explanation: "'Ainda que' é conjunção concessiva, indica algo que ocorre mesmo com obstáculo."
+            },
+            {
+                question: "Assinale a frase com pontuação correta:",
+                options: [
+                    "Cheguei, cedo, como sempre.",
+                    "Joana trouxe os livros Ana, os cadernos.",
+                    "Espere por favor!",
+                    "A resposta, no entanto, foi negativa.",
+                    "Carlos disse: estou cansado."
+                ],
+                answer: 3,
+                explanation: "Uso correto da vírgula para isolar o conector 'no entanto'."
+            },
+            {
+                question: "Qual palavra é um advérbio de modo?",
+                options: [
+                    "Alegre",
+                    "Rapidamente",
+                    "Rapidez",
+                    "Correto",
+                    "Apressa"
+                ],
+                answer: 1,
+                explanation: "Termina em '-mente' e indica modo."
+            },
+            {
+                question: "Em 'O professor explicou a matéria aos alunos', 'aos alunos' exerce a função de:",
+                options: [
+                    "Sujeito",
+                    "Predicado",
+                    "Objeto direto",
+                    "Objeto indireto",
+                    "Vocativo"
+                ],
+                answer: 3,
+                explanation: "O verbo 'explicar' exige complemento com preposição - objeto indireto."
+            },
+            {
+                question: "O verbo 'haver' no sentido de existir é usado na forma:",
+                options: [
+                    "Plural",
+                    "Reflexiva",
+                    "Invariável",
+                    "Passiva",
+                    "Pronominal"
+                ],
+                answer: 2,
+                explanation: "'Havia muitos alunos' - o verbo permanece no singular."
+            },
+            {
+                question: "Assinale a alternativa que apresenta coesão textual por substituição lexical:",
+                options: [
+                    "Pedro gosta de futebol. Pedro joga bem.",
+                    "Pedro gosta de futebol. Ele joga bem.",
+                    "Pedro gosta de futebol e joga bem.",
+                    "Pedro gosta de futebol, pois joga bem.",
+                    "Pedro gosta de futebol, mas não joga bem."
+                ],
+                answer: 1,
+                explanation: "O pronome 'ele' substitui 'Pedro', mantendo a coesão."
+            },
+            {
+                question: "Em 'Ele correu, caiu, machucou-se.' há:",
+                options: [
+                    "Enumeração",
+                    "Causa",
+                    "Condição",
+                    "Oposição",
+                    "Finalidade"
+                ],
+                answer: 0,
+                explanation: "A frase apresenta uma sequência de ações."
+            },
+            {
+                question: "'Apesar de tudo, não desistiu.' A expressão 'apesar de' indica:",
+                options: [
+                    "Tempo",
+                    "Concessão",
+                    "Causa",
+                    "Condição",
+                    "Conclusão"
+                ],
+                answer: 1,
+                explanation: "'Apesar de' expressa concessão, algo contrário ao esperado."
+            },
+            {
+                question: "Qual é o gênero textual da frase: 'Prezados, seguem os documentos em anexo.'?",
+                options: [
+                    "Propaganda",
+                    "Artigo de opinião",
+                    "Bilhete informal",
+                    "E-mail ou ofício",
+                    "Receita culinária"
+                ],
+                answer: 3,
+                explanation: "Estrutura e linguagem formal indicam comunicação oficial."
+            },
+            {
+                question: "Qual é a função do ponto e vírgula na frase: 'Estudou muito; mesmo assim, foi mal na prova'?",
+                options: [
+                    "Indicar enumeração",
+                    "Separar orações independentes",
+                    "Introduzir explicação",
+                    "Marcar conclusão",
+                    "Indicar tempo"
+                ],
+                answer: 1,
+                explanation: "Separa orações com certa autonomia e ideias contrastantes."
+            },
+            {
+                question: "'Se eu soubesse, teria avisado.' O tempo verbal empregado é:",
+                options: [
+                    "Futuro do presente",
+                    "Presente do indicativo",
+                    "Pretérito imperfeito",
+                    "Pretérito mais-que-perfeito",
+                    "Pretérito do subjuntivo"
+                ],
+                answer: 4,
+                explanation: "'Soubesse' está no pretérito do subjuntivo, expressando hipótese."
+            },
+            {
+                question: "Qual termo abaixo é um conector de conclusão?",
+                options: [
+                    "Portanto",
+                    "Contudo",
+                    "Entretanto",
+                    "Embora",
+                    "Ainda que"
+                ],
+                answer: 0,
+                explanation: "'Portanto' é conector conclusivo."
+            },
+            {
+                question: "Em 'Os meninos saíram e as meninas ficaram', temos uma relação de:",
+                options: [
+                    "Explicação",
+                    "Condição",
+                    "Alternância",
+                    "Coordenação",
+                    "Subordinação"
+                ],
+                answer: 3,
+                explanation: "As orações são independentes e ligadas por coordenação."
+            },
+            {
+                question: "Assinale a opção com erro de regência:",
+                options: [
+                    "Prefiro cinema a teatro.",
+                    "Informei o aluno do ocorrido.",
+                    "Agradeço a todos pela atenção.",
+                    "Chegou ao local atrasado.",
+                    "Assisti o filme com atenção."
+                ],
+                answer: 4,
+                explanation: "O verbo 'assistir' exige preposição: 'assisti ao filme'."
+            },
+            {
+                question: "A frase 'Ele mesmo lavou o carro' contém:",
+                options: [
+                    "Pronome indefinido",
+                    "Pronome demonstrativo",
+                    "Pronome reflexivo",
+                    "Pronome de realce",
+                    "Pronome relativo"
+                ],
+                answer: 3,
+                explanation: "'Mesmo' dá ênfase ao sujeito - pronome de realce."
+            },
+            {
+                question: "Qual opção apresenta um vocativo?",
+                options: [
+                    "Ela me pediu ajuda.",
+                    "O João chegou agora.",
+                    "Boa noite, senhores!",
+                    "Eles foram embora.",
+                    "Gostamos do lugar."
+                ],
+                answer: 2,
+                explanation: "'Senhores' é vocativo - chamamento ao interlocutor."
+            },
+            {
+                question: "A substituição de 'embora' por 'apesar de' exige:",
+                options: [
+                    "Mudança de tempo verbal",
+                    "Nenhuma alteração",
+                    "Troca do sujeito",
+                    "Uso de crase",
+                    "Mudança na pontuação"
+                ],
+                answer: 0,
+                explanation: "'Embora estudasse' → 'Apesar de estudar' (verbo no infinitivo)."
+            },
+            {
+                question: "Assinale a alternativa com erro de coesão:",
+                options: [
+                    "Maria viajou. Ela chegou ontem.",
+                    "João leu o livro. Depois, escreveu um resumo.",
+                    "Choveu. Por isso, saiu sem guarda-chuva.",
+                    "Pedro foi ao mercado. Porém, não comprou nada.",
+                    "Comprei o presente. Este foi caro."
+                ],
+                answer: 2,
+                explanation: "Há incoerência: se choveu, o esperado seria sair com guarda-chuva."
+            },
+            {
+                question: "Em 'Ele tem mais amigos do que o irmão', ocorre:",
+                options: [
+                    "Comparação",
+                    "Causa",
+                    "Conclusão",
+                    "Adição",
+                    "Alternância"
+                ],
+                answer: 0,
+                explanation: "'Mais... do que' expressa comparação."
+            },
+            {
+                question: "Assinale a palavra com erro de ortografia:",
+                options: [
+                    "Necessidade",
+                    "Imprescindível",
+                    "Suposição",
+                    "Chuchu",
+                    "Prosição"
+                ],
+                answer: 4,
+                explanation: "O correto é 'posição'."
+            },
+            {
+                question: "Qual alternativa apresenta uma oração subordinada adverbial causal?",
+                options: [
+                    "Como estava cansado, dormiu cedo.",
+                    "Se chover, não sairemos.",
+                    "Embora estudasse, não passou.",
+                    "Quando chegar, avise.",
+                    "Para vencer, é preciso lutar."
+                ],
+                answer: 0,
+                explanation: "'Como estava cansado' indica causa da ação principal."
+            },
+            {
+                question: "Assinale a alternativa com sujeito indeterminado:",
+                options: [
+                    "Eles viajaram cedo.",
+                    "Chegaram tarde.",
+                    "Todos estudaram.",
+                    "A professora explicou.",
+                    "O aluno respondeu."
+                ],
+                answer: 1,
+                explanation: "Verbo na 3ª pessoa do plural sem sujeito explícito → sujeito indeterminado."
+            },
+            {
+                question: "'A moça chegou sorrindo.' O termo 'sorrindo' é:",
+                options: [
+                    "Verbo principal",
+                    "Adjetivo",
+                    "Advérbio",
+                    "Locução verbal",
+                    "Gerúndio"
+                ],
+                answer: 4,
+                explanation: "'Sorrindo' está no gerúndio, expressando ação simultânea."
+            },
+            {
+                question: "Qual alternativa apresenta pleonasmo vicioso?",
+                options: [
+                    "Subir para cima",
+                    "Entrar na sala",
+                    "Sair correndo",
+                    "Gritar alto",
+                    "Ver com os olhos"
+                ],
+                answer: 0,
+                explanation: "'Subir' já pressupõe direção para cima."
+            },
+            {
+                question: "O que indica o sinal indicativo de crase em 'à escola'?",
+                options: [
+                    "Preposição e artigo definidos",
+                    "Verbo transitivo direto",
+                    "Pronome indefinido",
+                    "Substantivo próprio",
+                    "Contração de conjunção"
+                ],
+                answer: 0,
+                explanation: "Fusão da preposição 'a' com o artigo definido 'a'."
+            },
+            {
+                question: "Em 'Gostaria de saber se ele vem.', a palavra destacada é uma conjunção:",
+                options: [
+                    "Concessiva",
+                    "Causal",
+                    "Integrante",
+                    "Condicional",
+                    "Temporal"
+                ],
+                answer: 2,
+                explanation: "Introduz oração subordinada substantiva - conjunção integrante."
+            },
+            {
+                question: "Em qual alternativa há um erro de colocação pronominal:",
+                options: [
+                    "Disse-me a verdade.",
+                    "Me disseram a verdade.",
+                    "Entregou-lhe o presente.",
+                    "Encontraram-se por acaso.",
+                    "Não me avisaram."
+                ],
+                answer: 1,
+                explanation: "Início de frase com pronome átono é inadequado em contextos formais."
+            },
+            {
+                question: "Em 'Era uma vez uma princesa...', o gênero textual é:",
+                options: [
+                    "Instrução",
+                    "Propaganda",
+                    "Narração",
+                    "Relatório",
+                    "Editorial"
+                ],
+                answer: 2,
+                explanation: "'Era uma vez...' é típico da narrativa, especialmente contos."
+            },
+            {
+                question: "Qual alternativa apresenta linguagem denotativa?",
+                options: [
+                    "Ele está nas nuvens hoje.",
+                    "O tempo voa!",
+                    "A água ferve a 100ºC.",
+                    "Ela é uma flor.",
+                    "Chove tristeza nesta casa."
+                ],
+                answer: 2,
+                explanation: "Linguagem denotativa é objetiva e literal, como em dados científicos."
+            },
+            {
+                question: "A oração 'Não estudei, por isso não passei' expressa ideia de:",
+                options: [
+                    "Oposição",
+                    "Conclusão",
+                    "Comparação",
+                    "Adição",
+                    "Hipótese"
+                ],
+                answer: 1,
+                explanation: "'Por isso' é conector de conclusão."
+            },
+            {
+                question: "Em qual alternativa o termo destacado é um adjunto adverbial de lugar?",
+                options: [
+                    "Estudo todos os dias.",
+                    "Trabalho aqui.",
+                    "Correu depressa.",
+                    "Foi embora cedo.",
+                    "Agiu com cuidado."
+                ],
+                answer: 1,
+                explanation: "'Aqui' indica o lugar da ação."
+            },
+            {
+                question: "Qual alternativa apresenta um verbo no modo subjuntivo?",
+                options: [
+                    "Estudarei bastante.",
+                    "Estudo todos os dias.",
+                    "Estudaria com calma.",
+                    "Estude sempre que puder.",
+                    "Talvez estude amanhã."
+                ],
+                answer: 4,
+                explanation: "'Talvez estude' expressa possibilidade - subjuntivo."
+            },
+            {
+                question: "Em 'Fale baixo, pois o bebê dorme.', a conjunção indica:",
+                options: [
+                    "Finalidade",
+                    "Oposição",
+                    "Causa",
+                    "Condição",
+                    "Concessão"
+                ],
+                answer: 2,
+                explanation: "'Pois' explica o motivo da fala baixa."
+            },
+            {
+                question: "Qual alternativa mostra linguagem conotativa?",
+                options: [
+                    "O sol nasce no leste.",
+                    "João tem 35 anos.",
+                    "Aquela mulher é um anjo.",
+                    "Água é essencial para a vida.",
+                    "Estava com febre de 39ºC."
+                ],
+                answer: 2,
+                explanation: "'Anjo' é usado com sentido figurado - linguagem conotativa."
+            },
+            {
+                question: "Qual frase exige o uso de crase?",
+                options: [
+                    "Vou a feira.",
+                    "Cheguei a escola cedo.",
+                    "Voltei a casa correndo.",
+                    "Dirigi-me a aluna atenta.",
+                    "Entreguei o trabalho à professora."
+                ],
+                answer: 4,
+                explanation: "Verbo exige preposição 'a' + artigo 'a' = crase obrigatória."
+            },
+            {
+                question: "O trecho 'Ele saiu cedo, porque estava cansado' pode ser reescrito com:",
+                options: [
+                    "Embora",
+                    "Para que",
+                    "Caso",
+                    "Já que",
+                    "Como se"
+                ],
+                answer: 3,
+                explanation: "'Porque' e 'já que' expressam causa."
+            },
+            {
+                question: "Em 'Aqueles alunos são esforçados', o termo 'aqueles' é um:",
+                options: [
+                    "Pronome indefinido",
+                    "Pronome possessivo",
+                    "Pronome demonstrativo",
+                    "Artigo definido",
+                    "Substantivo"
+                ],
+                answer: 2,
+                explanation: "'Aqueles' localiza no espaço ou no tempo - pronome demonstrativo."
+            },
+            {
+                question: "Assinale a alternativa com verbo pronominal:",
+                options: [
+                    "Ele correu.",
+                    "Ela se feriu.",
+                    "Eles comeram.",
+                    "João estudava.",
+                    "O trem chegou."
+                ],
+                answer: 1,
+                explanation: "'Se feriu' é verbo pronominal - exige pronome reflexivo."
+            },
+            {
+                question: "A oração 'Embora estivesse cansado, saiu para caminhar' tem sentido de:",
+                options: [
+                    "Causa",
+                    "Consequência",
+                    "Adição",
+                    "Concessão",
+                    "Comparação"
+                ],
+                answer: 3,
+                explanation: "'Embora' indica concessão - algo que contraria a expectativa."
+            },
+            {
+                question: "Qual frase apresenta linguagem adequada para um ofício?",
+                options: [
+                    "Te mando aí depois.",
+                    "Seguinte: tô te avisando.",
+                    "Encaminho, por meio deste, as informações solicitadas.",
+                    "Me responde logo, tá?",
+                    "Bora resolver isso!"
+                ],
+                answer: 2,
+                explanation: "Linguagem formal e objetiva, adequada a documentos oficiais."
+            },
+            {
+                question: "Em qual opção há erro de concordância nominal?",
+                options: [
+                    "Estava certo e decidido.",
+                    "As provas estavam difíceis.",
+                    "Eles estavam nervoso.",
+                    "A criança parecia feliz.",
+                    "As meninas estão caladas."
+                ],
+                answer: 2,
+                explanation: "O correto seria 'nervosos' para concordar com o sujeito 'eles'."
+            },
+            {
+                question: "Qual palavra indica tempo?",
+                options: [
+                    "Alegremente",
+                    "Ontem",
+                    "Aqui",
+                    "Muito",
+                    "Longe"
+                ],
+                answer: 1,
+                explanation: "'Ontem' é advérbio de tempo."
+            }
         ]
     },
-
     informatica: {
         name: "Noções de Informática",
         questions: [
-  { question: "O que é um software de produtividade?", answer: "É um programa voltado a auxiliar tarefas do dia a dia, como editores de texto, planilhas e apresentações." },
-    { question: "Para que serve o atalho Ctrl + C no Windows?", answer: "Serve para copiar o conteúdo selecionado." },
-    { question: "O que é um firewall?", answer: "É uma barreira de segurança que controla o tráfego de rede entre dispositivos e bloqueia acessos não autorizados." },
-    { question: "Qual a função do sistema operacional?", answer: "Gerenciar os recursos do computador e permitir a interação entre usuário e hardware." },
-    { question: "O que é um vírus de computador?", answer: "É um programa malicioso capaz de se replicar e causar danos ou roubo de dados." },
-    { question: "O que é armazenamento em nuvem?", answer: "É um serviço que permite guardar arquivos online, acessíveis de qualquer lugar." },
-    { question: "Quais são exemplos de suítes de escritório?", answer: "Microsoft Office, LibreOffice e Google Workspace." },
-    { question: "Qual a função do navegador de internet?", answer: "Permitir o acesso a páginas da web por meio do protocolo HTTP/HTTPS." },
-    { question: "O que é o Word?", answer: "É um editor de texto da Microsoft, utilizado para criação e edição de documentos." },
-    { question: "Para que serve o Excel?", answer: "Para realizar cálculos, criar planilhas, gráficos e análises de dados." },
-    { question: "O que é phishing?", answer: "É uma técnica de fraude que busca obter dados pessoais se passando por instituições confiáveis." },
-    { question: "O que é o sistema operacional Windows?", answer: "É um sistema da Microsoft que gerencia o funcionamento do computador e oferece uma interface gráfica ao usuário." },
-    { question: "Qual a função do botão 'Salvar como'?", answer: "Salvar uma cópia do arquivo com novo nome, formato ou localização." },
-    { question: "O que significa atualização de software?", answer: "É a instalação de melhorias, correções e novos recursos em programas já existentes." },
-    { question: "Qual a função do PowerPoint?", answer: "Criar apresentações de slides com textos, imagens, gráficos e vídeos." },
             { question: "O que é hardware?", answer: "Parte física do computador." },
             { question: "O que é software?", answer: "Conjunto de programas e sistemas usados no computador." },
             { question: "Qual é a função do sistema operacional?", answer: "Gerenciar os recursos do computador." },
@@ -174,6 +776,21 @@ const flashcardsData = {
             { question: "O que é criptografia?", answer: "Codificação de dados para segurança." },
             { question: "O que é spam?", answer: "Mensagem eletrônica indesejada." },
             { question: "O que é o CADIN?", answer: "Cadastro de inadimplentes do setor público." },
+            { question: "O que é sistema operacional?", answer: "Programa que gerencia o hardware e softwares do computador." },
+            { question: "O que é pasta (diretório)?", answer: "Local onde arquivos são armazenados." },
+            { question: "Qual a função do atalho Ctrl + Z?", answer: "Desfazer a última ação." },
+            { question: "O que é cloud computing?", answer: "Computação baseada em serviços online." },
+            { question: "O que é formatação de disco?", answer: "Preparação do disco rígido para receber dados." },
+            { question: "O que é planilha eletrônica?", answer: "Programa usado para cálculos e organização de dados." },
+            { question: "O que é malware?", answer: "Programa malicioso criado para prejudicar o sistema." },
+            { question: "O que é spyware?", answer: "Programa espião que coleta dados do usuário." },
+            { question: "O que é download?", answer: "Ação de transferir arquivos da internet para o computador." },
+            { question: "O que é upload?", answer: "Enviar arquivos do computador para a internet." },
+            { question: "O que é navegador padrão?", answer: "Navegador usado automaticamente pelo sistema." },
+            { question: "O que é cookies?", answer: "Arquivos que armazenam informações do usuário em sites." },
+            { question: "O que é cache?", answer: "Memória usada para armazenar dados temporários." },
+            { question: "O que é drive C:?", answer: "Partição principal do sistema no Windows." },
+            { question: "O que é o atalho Ctrl + P?", answer: "Imprimir o documento atual." },
             { question: "O que é sistema operacional Linux?", answer: "Sistema de código aberto usado em servidores e PCs." },
             { question: "O que é RAM?", answer: "Memória de acesso aleatório usada pelo sistema para operações temporárias." },
             { question: "O que é ROM?", answer: "Memória de leitura com dados permanentes no sistema." },
@@ -194,41 +811,23 @@ const flashcardsData = {
             { question: "O que é formato PDF?", answer: "Formato de documento portátil, ideal para leitura e impressão." },
             { question: "O que é modo de compatibilidade no Word?", answer: "Ajusta recursos para versões anteriores do programa." },
             { question: "O que é hiperlink?", answer: "Link que direciona para outro conteúdo ou site." },
-            { question: "O que é pasta (diretório)?", answer: "Local onde arquivos são armazenados." },
-            { question: "Qual a função do atalho Ctrl + Z?", answer: "Desfazer a última ação." },
-            { question: "O que é cloud computing?", answer: "Computação baseada em serviços online." },
-            { question: "O que é formatação de disco?", answer: "Preparação do disco rígido para receber dados." },
-            { question: "O que é planilha eletrônica?", answer: "Programa usado para cálculos e organização de dados." },
-            { question: "O que é malware?", answer: "Programa malicioso criado para prejudicar o sistema." },
-            { question: "O que é spyware?", answer: "Programa espião que coleta dados do usuário." },
-            { question: "O que é download?", answer: "Ação de transferir arquivos da internet para o computador." },
-            { question: "O que é upload?", answer: "Enviar arquivos do computador para a internet." },
-            { question: "O que é navegador padrão?", answer: "Navegador usado automaticamente pelo sistema." },
-            { question: "O que é cookies?", answer: "Arquivos que armazenam informações do usuário em sites." },
-            { question: "O que é cache?", answer: "Memória usada para armazenar dados temporários." },
-            { question: "O que é drive C:?", answer: "Partição principal do sistema no Windows." },
-            { question: "O que é o atalho Ctrl + P?", answer: "Imprimir o documento atual." }
+            // New questions from Questões 4.docx
+            { question: "O que é phishing?", answer: "Golpe digital para roubar dados." },
+            { question: "O que é criptografia?", answer: "Codificação de dados para segurança." },
+            { question: "Como funciona a autenticação de dois fatores?", answer: "Combina duas formas de verificação, como senha e código enviado por SMS." },
+            { question: "Qual a diferença entre software livre e software proprietário?", answer: "Livre permite modificar e distribuir; proprietário não permite alterações ou acesso ao código-fonte." },
+            { question: "O que são malwares e quais os principais tipos?", answer: "Programas maliciosos como vírus, worms, trojans, spyware e ransomware." },
+            { question: "O que é firewall e qual sua função?", answer: "Sistema que filtra o tráfego de rede para proteger contra acessos não autorizados." },
+            { question: "Para que serve a função 'PROCV' no Excel?", answer: "Localiza um valor em uma coluna e retorna um valor na mesma linha de outra coluna." },
+            { question: "O que significa 'nuvem' na informática?", answer: "Armazenamento e processamento de dados em servidores remotos acessados pela internet." },
+            { question: "O que é protocolo HTTP?", answer: "Conjunto de regras para comunicação entre navegadores e servidores." },
+            { question: "O que é endereço IP?", answer: "Identificador numérico único de um dispositivo em uma rede." }
         ]
     },
 
-    logica: {
+    raciocinio_logico: {
         name: "Raciocínio Lógico",
         questions: [
-{ question: "O que é uma proposição lógica?", answer: "É uma sentença declarativa que pode ser verdadeira ou falsa." },
-    { question: "O que é uma tabela-verdade?", answer: "É uma ferramenta que mostra todas as possíveis combinações de valores lógicos de uma proposição." },
-    { question: "O que significa uma proposição composta?", answer: "É aquela formada por duas ou mais proposições simples ligadas por conectivos." },
-    { question: "O que representa o conectivo 'e' na lógica?", answer: "Representa a conjunção; só é verdadeira quando ambas as proposições são verdadeiras." },
-    { question: "O que representa o conectivo 'ou'?", answer: "Representa a disjunção; é verdadeira quando pelo menos uma proposição é verdadeira." },
-    { question: "O que é uma equivalência lógica?", answer: "É quando duas proposições diferentes possuem a mesma tabela-verdade." },
-    { question: "O que é uma negação?", answer: "É a operação lógica que inverte o valor lógico de uma proposição." },
-    { question: "Como identificar um argumento válido?", answer: "Se as premissas forem verdadeiras, a conclusão também deve ser verdadeira." },
-    { question: "Qual o valor da proposição condicional falsa?", answer: "Quando a primeira é verdadeira e a segunda é falsa." },
-    { question: "O que é um silogismo?", answer: "É um tipo de argumento dedutivo formado por duas premissas e uma conclusão." },
-    { question: "O que é um diagrama lógico?", answer: "É uma representação visual de relações entre conjuntos ou proposições." },
-    { question: "Como se resolve um problema com conjuntos?", answer: "Utiliza-se diagramas de Venn para representar interseções e uniões." },
-    { question: "O que é um argumento?", answer: "É uma sequência de proposições com a finalidade de sustentar uma conclusão." },
-    { question: "O que é inferência?", answer: "É o processo de tirar conclusões a partir de premissas." },
-    { question: "Como resolver um problema com proporcionalidade?", answer: "Identificando relações diretas ou inversas entre as grandezas envolvidas." },
             { question: "O que é uma proposição?", answer: "É uma frase que pode ser verdadeira ou falsa." },
             { question: "O que é uma proposição simples?", answer: "Aquela com apenas uma ideia." },
             { question: "O que é uma proposição composta?", answer: "Aquela formada por duas ou mais proposições simples." },
@@ -288,28 +887,29 @@ const flashcardsData = {
             { question: "O que é modus tollens?", answer: "Se p → q e q é falso, então p é falso." },
             { question: "O que é transitividade lógica?", answer: "Se p → q e q → r, então p → r." },
             { question: "O que é contrapositiva de p → q?", answer: "¬q → ¬p." },
-            { question: "O que é equivalência de ¬(p ∨ q)?", answer: "¬p ∧ ¬q (Lei de De Morgan)." }
+            { question: "O que é equivalência de ¬(p ∨ q)?", answer: "¬p ∧ ¬q (Lei de De Morgan)." },
+            // New questions from Questões 4.docx
+            { question: "O que é negação da proposição composta 'p ∧ q'?", answer: "É '¬p ∨ ¬q', segundo as Leis de De Morgan." },
+            { question: "O que é uma tautologia?", answer: "Proposição composta que é sempre verdadeira, independentemente dos valores das partes." },
+            { question: "O que representa a proposição condicional 'p → q'?", answer: "Se p é verdadeiro, então q também deve ser verdadeiro para que a proposição seja verdadeira." },
+            { question: "Quando a disjunção 'p ∨ q' é falsa?", answer: "Apenas quando p e q forem ambos falsos." },
+            { question: "Qual é a contrapositiva de 'Se Pedro estuda, ele passa'?", answer: "Se Pedro não passa, então ele não estuda." },
+            { question: "Como funciona o modus ponens?", answer: "Se 'p → q' é verdadeiro e 'p' ocorre, então 'q' deve ocorrer." },
+            { question: "O que é argumento válido na lógica proposicional?", answer: "Aquele em que a conclusão decorre logicamente das premissas." },
+            { question: "Qual a diferença entre raciocínio dedutivo e indutivo?", answer: "Dedutivo vai do geral ao particular; indutivo, do particular ao geral." },
+            { question: "Qual é a negação da proposição 'Todos os alunos passaram'?", answer: "Pelo menos um aluno não passou." },
+            { question: "O que representa a bicondicional 'p ↔ q'?", answer: "p é verdadeiro se, e somente se, q for verdadeiro." },
+            { question: "Quando uma proposição é contingente?", answer: "Quando pode ser verdadeira ou falsa, dependendo dos valores de p e q." },
+            { question: "O que é um silogismo?", answer: "Argumento com duas premissas e uma conclusão lógica (ex: Todos os homens são mortais; Sócrates é homem; logo, Sócrates é mortal)." },
+            { question: "O que é uma inferência lógica?", answer: "Conclusão válida a partir de premissas dadas." },
+            { question: "O que é diagrama de Venn e qual sua utilidade?", answer: "Representação gráfica de conjuntos e suas intersecções." },
+            { question: "O que é disjunção exclusiva?", answer: "Operador lógico onde apenas uma das proposições pode ser verdadeira." }
         ]
     },
 
     etica: {
         name: "Ética na Administração Pública",
         questions: [
-{ question: "O que é ética?", answer: "É o conjunto de valores e princípios que orientam a conduta humana com base no que é considerado certo ou errado." },
-    { question: "Qual a diferença entre ética e moral?", answer: "A ética é um estudo filosófico da moral; já a moral são as regras práticas seguidas em determinada sociedade." },
-    { question: "O que é ética no setor público?", answer: "É a conduta esperada dos agentes públicos no desempenho de suas funções com base na legalidade, impessoalidade e honestidade." },
-    { question: "Por que a ética é importante na administração pública?", answer: "Para garantir o uso correto dos recursos públicos e a confiança da sociedade nas instituições." },
-    { question: "O que diz a Lei nº 8.429/1992?", answer: "Dispõe sobre os atos de improbidade administrativa cometidos por agentes públicos." },
-    { question: "Quais são os princípios da ética pública?", answer: "Legalidade, moralidade, publicidade, impessoalidade e eficiência." },
-    { question: "O que é um ato de improbidade administrativa?", answer: "É o ato praticado com desonestidade ou má-fé no exercício da função pública." },
-    { question: "O que caracteriza um comportamento antiético?", answer: "Ações que ferem os princípios morais e legais, como favorecimento pessoal ou corrupção." },
-    { question: "Qual é o papel do Código de Ética do servidor público?", answer: "Orientar a conduta do servidor para garantir integridade, respeito e responsabilidade." },
-    { question: "O que é conflito de interesses?", answer: "É quando o interesse pessoal do servidor interfere no seu dever público." },
-    { question: "Como a ética se relaciona com a cidadania?", answer: "A ética garante a igualdade de direitos e deveres, fortalecendo a democracia e o bem comum." },
-    { question: "Qual a importância da transparência?", answer: "Permite o controle social, evita a corrupção e fortalece a legitimidade das ações públicas." },
-    { question: "O que é dever de probidade?", answer: "É a obrigação do servidor público de agir com honestidade, lealdade e boa-fé." },
-    { question: "Como o servidor deve agir diante de um dilema ético?", answer: "Com base nos princípios éticos e no interesse público, buscando orientação se necessário." },
-    { question: "Qual a relação entre ética e interesse público?", answer: "A ética exige que as ações do servidor estejam sempre voltadas ao bem coletivo e não ao benefício próprio." },
             { question: "O que é ética?", answer: "Conjunto de valores e princípios que regem o comportamento humano." },
             { question: "O que é moral?", answer: "Conjunto de regras sociais seguidas por um grupo." },
             { question: "Qual é o foco da ética pública?", answer: "Interesse coletivo." },
@@ -369,28 +969,29 @@ const flashcardsData = {
             { question: "O que é transparência ativa?", answer: "Divulgação espontânea de informações sem necessidade de solicitação." },
             { question: "Qual o papel da liderança ética?", answer: "Inspirar boas práticas e decisões justas." },
             { question: "O que é conflito de lealdade?", answer: "Quando interesses pessoais conflitam com os deveres públicos." },
-            { question: "Qual o papel dos códigos de ética?", answer: "Servem como guia de conduta para servidores e instituições." }
+            { question: "Qual o papel dos códigos de ética?", answer: "Servem como guia de conduta para servidores e instituições." },
+            // New questions from Questões 4.docx
+            { question: "Qual a diferença entre ética e moral no contexto do serviço público?", answer: "Ética refere-se a princípios universais; moral são normas culturais específicas do grupo." },
+            { question: "O que significa o princípio da publicidade?", answer: "Que os atos públicos devem ser transparentes e acessíveis à sociedade." },
+            { question: "Qual é a importância da imparcialidade no exercício da função pública?", answer: "Garante justiça e evita favorecimentos indevidos." },
+            { question: "Por que a legalidade nem sempre garante conduta ética?", answer: "Porque algo pode ser legal, mas ainda assim contrariar valores morais." },
+            { question: "O que é conflito de interesses?", answer: "Quando interesses pessoais comprometem a imparcialidade do servidor." },
+            { question: "O que é ética situacional e por que é perigosa no serviço público?", answer: "É a relativização da ética conforme a conveniência, podendo levar a desvios graves." },
+            { question: "O que é probidade administrativa?", answer: "Honestidade e integridade na conduta do agente público." },
+            { question: "O que representa o princípio da eficiência na ética pública?", answer: "Prestar o serviço com qualidade, responsabilidade e foco no bem comum." },
+            { question: "Qual é a função da ouvidoria pública?", answer: "Canal de escuta e encaminhamento de demandas da população." },
+            { question: "O que caracteriza um comportamento antiético?", answer: "Atitudes que violam normas morais, mesmo que dentro da legalidade." },
+            { question: "Como o decoro se relaciona à imagem do servidor?", answer: "Mantém a dignidade e respeito à função pública." },
+            { question: "Qual a consequência da quebra do sigilo funcional?", answer: "Pode comprometer a segurança institucional e resultar em sanções." },
+            { question: "Como o assédio moral afeta a ética no trabalho?", answer: "Fere a dignidade e o ambiente de respeito entre servidores." },
+            { question: "Por que a assiduidade é uma questão ética?", answer: "Porque demonstra compromisso e respeito ao serviço público e à sociedade." },
+            { question: "Qual a importância da ética para a confiança pública?", answer: "Garante legitimidade e fortalece a credibilidade da administração pública." }
         ]
     },
 
-    administracao: {
+    administracao_publica: {
         name: "Noções de Administração Pública",
         questions: [
-    { question: "O que é Administração Pública direta?", answer: "É composta pelos órgãos que integram os entes federativos: União, Estados, Municípios e Distrito Federal." },
-    { question: "O que é Administração Pública indireta?", answer: "É composta por entidades com personalidade jurídica própria, como autarquias, fundações, empresas públicas e sociedades de economia mista." },
-    { question: "O que é descentralização?", answer: "É a transferência de competências da administração direta para a indireta ou para particulares." },
-    { question: "O que é desconcentração?", answer: "É a distribuição interna de competências dentro da mesma entidade da administração direta." },
-    { question: "O que são princípios da Administração Pública?", answer: "São diretrizes que orientam a atuação dos agentes públicos, como legalidade, impessoalidade, moralidade, publicidade e eficiência." },
-    { question: "O que é licitação?", answer: "É o procedimento administrativo para selecionar a proposta mais vantajosa para a administração pública." },
-    { question: "O que é pregão?", answer: "É uma modalidade de licitação usada para aquisição de bens e serviços comuns, com fase de lances." },
-    { question: "O que é Requisição administrativa?", answer: "É o uso temporário de bens ou serviços particulares em casos de urgência, com posterior indenização." },
-    { question: "O que é gestão por competências?", answer: "É a estratégia de gestão que alinha competências dos servidores às necessidades organizacionais." },
-    { question: "O que é improbidade administrativa?", answer: "É o ato ilegal cometido por agente público que causa prejuízo ao erário ou afronta os princípios da Administração Pública." },
-    { question: "O que é controle interno?", answer: "É o conjunto de ações adotadas pelo próprio órgão para garantir legalidade, eficiência e transparência dos atos." },
-    { question: "O que é controle externo?", answer: "É exercido pelos órgãos de controle, como Tribunais de Contas e o Poder Legislativo, sobre a atuação da administração." },
-    { question: "Qual a função do SICAF?", answer: "Cadastrar e habilitar fornecedores para participarem de licitações públicas federais." },
-    { question: "O que é eficiência na Administração Pública?", answer: "É a busca por melhores resultados com menor uso de recursos públicos." },
-    { question: "O que é o CADIN?", answer: "É o Cadastro Informativo de créditos não quitados do setor público federal." },
             { question: "O que é administração direta?", answer: "É composta por órgãos ligados diretamente ao governo (União, estados, DF e municípios)." },
             { question: "O que é administração indireta?", answer: "É formada por autarquias, fundações, empresas públicas e sociedades de economia mista." },
             { question: "O que são autarquias?", answer: "Entidades com autonomia administrativa, criadas por lei." },
@@ -451,32 +1052,28 @@ const flashcardsData = {
             { question: "O que é delegação de competência?", answer: "Transferência de atribuições entre autoridades." },
             { question: "O que é centralização?", answer: "Concentração de decisões na administração direta." },
             { question: "O que é organização formal?", answer: "Estrutura oficial, estabelecida em normas e regulamentos." },
-            { question: "O que é organização informal?", answer: "Relações interpessoais não previstas formalmente." },
+            { question: "O que é organização informal?", answer: "Relacões interpessoais não previstas formalmente." },
             { question: "O que é ciclo de políticas públicas?", answer: "Processo que envolve formulação, implementação e avaliação." },
             { question: "O que é liderança pública?", answer: "Capacidade de influenciar positivamente os rumos da gestão pública." },
             { question: "O que é cultura organizacional?", answer: "Conjunto de valores e comportamentos compartilhados no órgão." },
-            { question: "O que é ouvidoria pública?", answer: "Canal de comunicação entre cidadão e governo para críticas e sugestões." }
+            { question: "O que é ouvidoria pública?", answer: "Canal de comunicação entre cidadão e governo para críticas e sugestões." },
+            // New questions from Questões 4.docx
+            { question: "O que é administração indireta?", answer: "Formada por autarquias, fundações, empresas públicas e sociedades de economia mista." },
+            { question: "O que é licitação?", answer: "Processo para escolher a melhor proposta para a administração pública." },
+            { question: "O que é princípio da eficiência?", answer: "Exige que a administração atue com qualidade, rapidez e menor custo possível." },
+            { question: "Qual a diferença entre autarquia e fundação pública?", answer: "Autarquia tem personalidade jurídica de direito público; fundação, de direito privado." },
+            { question: "O que é controle interno na administração pública?", answer: "Acompanhamento dos atos administrativos por órgãos da própria administração." },
+            { question: "O que caracteriza a descentralização administrativa?", answer: "Transferência da execução de atividades a entidades distintas da administração direta." },
+            { question: "O que é poder de polícia?", answer: "Capacidade de restringir direitos em benefício do interesse público." },
+            { question: "O que é improbidade administrativa?", answer: "Ato ilegal ou imoral praticado por agente público, que lesa a administração." },
+            { question: "Qual a diferença entre ato vinculado e ato discricionário?", answer: "Ato vinculado segue normas; discricionário permite juízo de conveniência e oportunidade." },
+            { question: "O que é função normativa da administração pública?", answer: "Capacidade de editar regras para organizar seus próprios serviços." }
         ]
     },
 
-    materiais: {
+    recursos_materiais: {
         name: "Noções de Recursos Materiais",
         questions: [
-    { question: "O que é classificação de materiais?", answer: "É a organização dos materiais em grupos, de acordo com suas características e finalidades." },
-    { question: "O que são bens permanentes?", answer: "São bens com durabilidade superior a dois anos e que não se desgastam rapidamente com o uso." },
-    { question: "O que são bens de consumo?", answer: "São materiais que se desgastam com o uso imediato, como papel, canetas e alimentos." },
-    { question: "O que é gestão de estoques?", answer: "É o controle das entradas, saídas, níveis e necessidades de reposição de materiais." },
-    { question: "O que é inventário de materiais?", answer: "É o levantamento físico e contábil dos bens existentes em estoque ou em uso." },
-    { question: "Qual a função da armazenagem?", answer: "É guardar materiais de forma segura, organizada e acessível, evitando perdas e desperdícios." },
-    { question: "O que é requisição de materiais?", answer: "É o documento utilizado para solicitar materiais ao setor de almoxarifado." },
-    { question: "O que é almoxarifado?", answer: "É o local destinado ao armazenamento e controle de materiais da organização." },
-    { question: "O que é controle de validade de materiais?", answer: "É o acompanhamento do prazo de validade, especialmente para materiais perecíveis ou sensíveis." },
-    { question: "O que é padronização de materiais?", answer: "É a definição de características técnicas uniformes para facilitar o controle e as aquisições." },
-    { question: "O que é entrada de materiais?", answer: "É o registro da chegada de materiais ao almoxarifado, após conferência e aprovação." },
-    { question: "O que é saída de materiais?", answer: "É o fornecimento de materiais aos setores, com registro e autorização adequados." },
-    { question: "Qual a importância da classificação de consumo e permanente?", answer: "Ela impacta na forma de controle, contabilidade e registro patrimonial dos materiais." },
-    { question: "O que são materiais inservíveis?", answer: "São aqueles que não têm mais condições de uso e devem ser descartados ou leiloados." },
-    { question: "O que é planejamento de compras?", answer: "É a antecipação das necessidades futuras de materiais para evitar falta ou excesso de estoque." },
             { question: "O que é material de consumo?", answer: "Aquele que se deteriora com o uso." },
             { question: "O que é material permanente?", answer: "Bem com durabilidade superior a dois anos." },
             { question: "O que é armazenagem?", answer: "Guarda adequada dos materiais." },
@@ -531,29 +1128,44 @@ const flashcardsData = {
             { question: "O que é custo de armazenagem?", answer: "Valor gasto para manter itens em estoque." },
             { question: "O que é conferência quantitativa?", answer: "Verificação do número de itens recebidos." },
             { question: "O que é conferência qualitativa?", answer: "Verificação do estado e conformidade dos itens recebidos." },
-            { question: "O que é planejamento de compras?", answer: "Estudo das necessidades e programação de aquisições." }
+            { question: "O que é planejamento de compras?", answer: "Estudo das necessidades e programação de aquisições." },
+            // New questions from Questões 4.docx
+            { question: "O que é material permanente?", answer: "Bem com durabilidade superior a dois anos." },
+            { question: "O que é controle de estoque?", answer: "Acompanhamento das entradas e saídas dos materiais." },
+            { question: "O que é inventário patrimonial?", answer: "Levantamento físico e financeiro de todos os bens da organização." },
+            { question: "Qual a função da ficha de controle de material?", answer: "Registrar movimentações de entrada, saída e saldo de materiais." },
+            { question: "O que diferencia material de consumo de material permanente?", answer: "Consumo se desgasta com o uso contínuo; permanente tem longa durabilidade." },
+            { question: "O que é almoxarifado?", answer: "Local de guarda e distribuição de materiais de consumo." },
+            { question: "O que é requisição de material?", answer: "Pedido formal para retirada de item do estoque." },
+            { question: "O que é curva ABC de materiais?", answer: "Classificação de itens por importância de uso ou valor, para controle eficaz." },
+            { question: "O que é ponto de ressuprimento?", answer: "Nível de estoque em que se deve fazer novo pedido para evitar falta." },
+            { question: "O que é obsolescência de material?", answer: "Perda de utilidade ou valor de um item por desuso ou superação técnica." }
         ]
     },
 
     arquivologia: {
         name: "Arquivologia",
         questions: [
- { question: "O que é arquivologia?", answer: "É a ciência que estuda os princípios, técnicas e práticas referentes à produção, organização, uso e preservação de arquivos." },
-    { question: "O que são documentos arquivísticos?", answer: "São documentos produzidos e recebidos por instituições ou pessoas no exercício de suas atividades." },
-    { question: "O que é protocolo?", answer: "É o setor responsável pelo recebimento, registro, classificação e distribuição de documentos." },
-    { question: "O que é classificação de documentos?", answer: "É a identificação do tipo e assunto de um documento, organizando-o de acordo com um plano de classificação." },
-    { question: "O que é tabela de temporalidade?", answer: "É o instrumento que determina os prazos de guarda e o destino final dos documentos." },
-    { question: "O que é arquivo corrente?", answer: "É o conjunto de documentos em uso frequente e que devem estar próximos aos setores que os utilizam." },
-    { question: "O que é arquivo intermediário?", answer: "É o conjunto de documentos pouco utilizados, mas que ainda não podem ser eliminados." },
-    { question: "O que é arquivo permanente?", answer: "São documentos com valor histórico, científico ou probatório, que devem ser preservados indefinidamente." },
-    { question: "O que é arquivamento?", answer: "É a guarda sistemática de documentos com critérios que facilitam sua recuperação." },
-    { question: "O que é preservação documental?", answer: "É o conjunto de medidas para manter os documentos íntegros e legíveis ao longo do tempo." },
-    { question: "Qual a diferença entre arquivo e biblioteca?", answer: "O arquivo guarda documentos originais de valor administrativo e legal; a biblioteca guarda livros e obras publicadas." },
-    { question: "O que são métodos de arquivamento?", answer: "São formas sistemáticas de organizar documentos, como alfabético, numérico, geográfico ou por assunto." },
-    { question: "O que é eliminação de documentos?", answer: "É o descarte de documentos sem valor permanente, conforme definido na tabela de temporalidade." },
-    { question: "O que é digitalização de documentos?", answer: "É o processo de transformar documentos físicos em arquivos digitais, preservando seu conteúdo." },
-    { question: "O que é gestão documental?", answer: "É o conjunto de práticas que visa controlar a produção, tramitação, uso e arquivamento dos documentos ao longo do seu ciclo de vida." },
             { question: "O que é arquivologia?", answer: "Ciência que estuda os arquivos." },
+            { question: "O que é arquivo?", answer: "Conjunto de documentos produzidos por uma instituição." },
+            { question: "O que é documento de arquivo?", answer: "Aquele produzido no exercício das atividades." },
+            { question: "O que é protocolo?", answer: "Setor que registra entrada e saída de documentos." },
+            { question: "O que é classificação documental?", answer: "Organização dos documentos conforme sua natureza." },
+            { question: "O que é tabela de temporalidade?", answer: "Define prazos de guarda e destinação dos documentos." },
+            { question: "O que é eliminação documental?", answer: "Descarte autorizado de documentos." },
+            { question: "O que é preservação?", answer: "Conjunto de medidas para evitar a deterioração." },
+            { question: "O que é conservação?", answer: "Ações preventivas para manter o documento utilizável." },
+            { question: "O que é restauração?", answer: "Reparação de danos em documentos." },
+            { question: "O que é fase corrente?", answer: "Fase em que o documento é frequentemente consultado." },
+            { question: "O que é fase intermediária?", answer: "Fase de pouca consulta, mas com valor." },
+            { question: "O que é fase permanente?", answer: "Fase em que o documento é guardado para sempre." },
+            { question: "O que é arquivo corrente?", answer: "Aquele usado nas atividades do dia a dia." },
+            { question: "O que é arquivo intermediário?", answer: "Aquele com pouca frequência de uso." },
+            { question: "O que é arquivo permanente?", answer: "Aquele com valor histórico." },
+            { question: "O que é digitalização de documentos?", answer: "Conversão de documentos físicos em arquivos digitais." },
+            { question: "Qual a função do SEI (Sistema Eletrônico de Informações)?", answer: "Gestão eletrônica de processos e documentos." },
+            { question: "O que é protocolo integrado?", answer: "Sistema que permite o rastreamento de documentos entre órgãos." },
+            { question: "O que é destinação final?", answer: "Decisão sobre guarda permanente ou eliminação." },
             { question: "O que é arquivo?", answer: "Conjunto de documentos organizados para consulta e preservação." },
             { question: "O que é documento arquivístico?", answer: "Documento produzido por uma instituição no exercício de suas funções." },
             { question: "O que é arquivo corrente?", answer: "Arquivo de documentos em uso frequente." },
@@ -589,47 +1201,25 @@ const flashcardsData = {
             { question: "O que é conservação preventiva?", answer: "Ações para evitar danos antes que ocorram." },
             { question: "O que é digital bom?", answer: "Documento criado digitalmente, sem versão física." },
             { question: "O que é indexação?", answer: "Atribuição de palavras-chave para facilitar a busca." },
-            { question: "O que é documento de arquivo?", answer: "Aquele produzido no exercício das atividades." },
-            { question: "O que é protocolo?", answer: "Setor que registra entrada e saída de documentos." },
-            { question: "O que é classificação documental?", answer: "Organização dos documentos conforme sua natureza." },
-            { question: "O que é tabela de temporalidade?", answer: "Define prazos de guarda e destinação dos documentos." },
-            { question: "O que é eliminação documental?", answer: "Descarte autorizado de documentos." },
-            { question: "O que é preservação?", answer: "Conjunto de medidas para evitar a deterioração." },
-            { question: "O que é conservação?", answer: "Ações preventivas para manter o documento utilizável." },
-            { question: "O que é restauração?", answer: "Reparação de danos em documentos." },
+            // New questions from Questões 4.docx
             { question: "O que é fase corrente?", answer: "Fase em que o documento é frequentemente consultado." },
-            { question: "O que é fase intermediária?", answer: "Fase de pouca consulta, mas com valor." },
-            { question: "O que é fase permanente?", answer: "Fase em que o documento é guardado para sempre." },
-            { question: "O que é arquivo corrente?", answer: "Aquele usado nas atividades do dia a dia." },
-            { question: "O que é arquivo intermediário?", answer: "Aquele com pouca frequência de uso." },
-            { question: "O que é arquivo permanente?", answer: "Aquele com valor histórico." },
-            { question: "O que é digitalização de documentos?", answer: "Conversão de documentos físicos em arquivos digitais." },
-            { question: "Qual a função do SEI (Sistema Eletrônico de Informações)?", answer: "Gestão eletrônica de processos e documentos." },
-            { question: "O que é protocolo integrado?", answer: "Sistema que permite o rastreamento de documentos entre órgãos." },
-            { question: "O que é destinação final?", answer: "Decisão sobre guarda permanente ou eliminação." }
+            { question: "O que é classificação documental?", answer: "Organização dos documentos conforme sua natureza." },
+            { question: "O que é tabela de temporalidade?", answer: "Instrumento que define prazos para guarda e destinação de documentos." },
+            { question: "O que é protocolo em arquivologia?", answer: "Conjunto de atividades que registram, classificam e distribuem documentos." },
+            { question: "O que é documento arquivístico?", answer: "Aquele que possui valor administrativo, jurídico ou histórico e é produzido no exercício das atividades da instituição." },
+            { question: "O que é destinação de documentos?", answer: "Decisão sobre a guarda permanente ou eliminação de documentos." },
+            { question: "Qual a diferença entre arquivo corrente e intermediário?", answer: "Corrente tem uso frequente; intermediário tem uso eventual." },
+            { question: "O que é arquivo permanente?", answer: "Conjunto de documentos com valor histórico, preservados indefinidamente." },
+            { question: "O que é eliminação documental?", answer: "Descarte autorizado de documentos sem valor para a administração ou a história." },
+            { question: "O que são fundos documentais?", answer: "Conjunto de documentos produzidos por uma mesma entidade, mantendo sua organicidade." }
         ]
     },
 
-    contratos: {
+    gestao_contratos: {
         name: "Gestão de Contratos",
         questions: [
-    { question: "O que é um contrato administrativo?", answer: "É o acordo formal firmado entre a Administração Pública e particulares para a realização de um objeto de interesse público." },
-    { question: "Quais são as principais fases da gestão contratual?", answer: "Planejamento, formalização, acompanhamento da execução, fiscalização e encerramento." },
-    { question: "O que é fiscalização contratual?", answer: "É o acompanhamento técnico e administrativo da execução do contrato para garantir seu cumprimento." },
-    { question: "Quem é o fiscal do contrato?", answer: "É o servidor designado para acompanhar e verificar a execução do contrato." },
-    { question: "O que é aditivo contratual?", answer: "É a alteração formal de cláusulas do contrato, como prazos, valores ou escopo, dentro dos limites legais." },
-    { question: "O que é inadimplemento contratual?", answer: "É o descumprimento das obrigações pactuadas por uma das partes." },
-    { question: "O que é equilíbrio econômico-financeiro do contrato?", answer: "É a garantia de que as condições inicialmente acordadas entre as partes serão mantidas durante a execução." },
-    { question: "O que é rescisão contratual?", answer: "É a extinção antecipada do contrato por descumprimento, interesse público ou acordo entre as partes." },
-    { question: "Qual é a lei que regula os contratos administrativos?", answer: "A nova Lei de Licitações e Contratos nº 14.133/2021." },
-    { question: "O que é vigência contratual?", answer: "É o período em que o contrato está em vigor e produz efeitos legais." },
-    { question: "O que é termo de recebimento definitivo?", answer: "É o documento que atesta a conclusão do objeto contratual, após a verificação da conformidade." },
-    { question: "O que é glosa contratual?", answer: "É o desconto no pagamento por serviços não executados conforme contrato." },
-    { question: "Qual a diferença entre gestor e fiscal do contrato?", answer: "O gestor coordena a execução geral do contrato, enquanto o fiscal acompanha tecnicamente o cumprimento." },
-    { question: "O que é cláusula penal?", answer: "É a previsão contratual de multa ou punição em caso de descumprimento." },
-    { question: "O que é apostilamento?", answer: "É o registro de alterações contratuais que não modificam cláusulas essenciais, como atualizações de valores." },
-            { question: "O que é contrato administrativo?", answer: "Acordo entre a administração pública e terceiros." },
-            { question: "O que é licitação?", answer: "Processo para escolher a proposta mais vantajosa para a administração." },
+            { question: "O que é contrato administrativo?", answer: "Acordo entre a Administração Pública e terceiros." },
+            { question: "O que é edital?", answer: "Documento que regula uma licitação." },
             { question: "O que é cláusula contratual?", answer: "Item que define direitos e deveres no contrato." },
             { question: "O que é aditivo contratual?", answer: "Alteração posterior no contrato original." },
             { question: "O que é vigência contratual?", answer: "Período em que o contrato está em validade." },
@@ -682,8 +1272,58 @@ const flashcardsData = {
             { question: "O que é responsabilidade solidária?", answer: "Quando duas partes respondem igualmente por obrigações." },
             { question: "O que é contrato verbal?", answer: "Proibido na Administração Pública, exceto em caso emergencial." },
             { question: "O que é prestação de contas do contrato?", answer: "Relatório detalhado da execução contratual." },
-            { question: "O que é inadimplemento culposo?", answer: "Descumprimento por negligência ou imprudência." },
-            { question: "O que é edital?", answer: "Documento que regula uma licitação." }
+            { question: "O que é inadimplemento culposo?", answer: "Descumprimento por negligência ou imprudência." }
+        ]
+    },
+
+    atualidades: {
+        name: "Atualidades",
+        questions: [
+            { question: "O que é aquecimento global?", answer: "Aumento da temperatura média da Terra." },
+            { question: "O que é desmatamento?", answer: "Remoção da vegetação natural de forma irregular." },
+            { question: "O que é energia renovável?", answer: "Energia obtida de fontes naturais que se renovam." },
+            { question: "O que é inclusão digital?", answer: "Acesso igualitário às tecnologias." },
+            { question: "O que é inflação?", answer: "Aumento contínuo dos preços." },
+            { question: "O que é sustentabilidade?", answer: "Uso consciente dos recursos naturais." },
+            { question: "Qual o papel das vacinas na saúde pública?", answer: "Prevenção de doenças e epidemias." },
+            { question: "O que é inteligência artificial?", answer: "Tecnologia que simula a inteligência humana." },
+            { question: "O que são fake news?", answer: "Notícias falsas divulgadas como verdadeiras." },
+            { question: "O que é geopolítica?", answer: "Relação entre poder, território e influência internacional." },
+            { question: "O que é inteligência artificial?", answer: "Tecnologia que simula a capacidade humana de aprender e decidir." },
+            { question: "O que é sustentabilidade?", answer: "Uso consciente dos recursos para não comprometer o futuro." },
+            { question: "O que é aquecimento global?", answer: "Aumento da temperatura média do planeta." },
+            { question: "O que são fake news?", answer: "Notícias falsas divulgadas como verdadeiras." },
+            { question: "O que é desmatamento?", answer: "Retirada da vegetação de forma ilegal ou descontrolada." },
+            { question: "O que é desigualdade social?", answer: "Diferença no acesso a direitos e recursos básicos." },
+            { question: "O que é inclusão digital?", answer: "Acesso de todos às tecnologias da informação." },
+            { question: "O que é geopolítica?", answer: "Relações de poder entre países e blocos econômicos." },
+            { question: "O que é refugiado?", answer: "Pessoa que deixa seu país por perseguição ou guerra." },
+            { question: "O que é inflação?", answer: "Aumento generalizado de preços." },
+            { question: "O que é PIB?", answer: "Produto Interno Bruto, soma de toda a riqueza produzida no país." },
+            { question: "O que é ONU?", answer: "Organização das Nações Unidas, promove a paz e os direitos humanos." },
+            { question: "O que é COP?", answer: "Conferência do Clima da ONU para discutir mudanças climáticas." },
+            { question: "O que é inteligência emocional?", answer: "Capacidade de lidar com as próprias emoções e as dos outros." },
+            { question: "O que é polarização política?", answer: "Divisão extrema de opiniões políticas na sociedade." },
+            { question: "O que são fontes de energia limpa?", answer: "Energias que não poluem, como solar e eólica." },
+            { question: "O que é mobilidade urbana sustentável?", answer: "Transporte eficiente com menor impacto ambiental." },
+            { question: "O que é crise migratória?", answer: "Deslocamento em massa por guerras, fome ou clima." },
+            { question: "O que é segurança alimentar?", answer: "Garantia de acesso a alimentos saudáveis e suficientes." },
+            { question: "O que são moedas digitais?", answer: "Moedas virtuais como o bitcoin." },
+            { question: "O que é economia circular?", answer: "Modelo que reduz resíduos e reutiliza recursos." },
+            { question: "O que é governança climática?", answer: "Ações globais para enfrentar as mudanças do clima." },
+            { question: "O que é racismo estrutural?", answer: "Discriminação institucionalizada na sociedade." },
+            { question: "O que é equidade de gênero?", answer: "Igualdade de direitos e oportunidades entre os gêneros." },
+            { question: "O que é taxa Selic?", answer: "Juros básicos da economia brasileira." },
+            { question: "O que é BRICS?", answer: "Bloco econômico formado por Brasil, Rússia, Índia, China e África do Sul." },
+            { question: "O que é cibersegurança?", answer: "Proteção de sistemas digitais contra ataques." },
+            { question: "O que é desinformação?", answer: "Disseminação proposital de informações falsas." },
+            { question: "O que é índice de desenvolvimento humano (IDH)?", answer: "Mede qualidade de vida, educação e renda." },
+            { question: "O que é refugiado climático?", answer: "Pessoa forçada a migrar por catástrofes ambientais." },
+            { question: "O que é inteligência artificial generativa?", answer: "IA capaz de criar textos, imagens e vídeos." },
+            { question: "O que é crédito de carbono?", answer: "Permissão de emitir CO₂ dentro de limites sustentáveis." },
+            { question: "O que é política pública inclusiva?", answer: "Ações que promovem equidade e justiça social." },
+            { question: "O que é nacionalismo econômico?", answer: "Defesa da economia nacional frente à globalização." },
+            { question: "O que é polarização ideológica?", answer: "Radicalização de opiniões políticas opostas." }
         ]
     }
 };
