@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Elementos do DOM
+    const modeSelection = document.getElementById('modeSelection');
     const subjectSelection = document.getElementById('subjectSelection');
     const flashcardContainer = document.getElementById('flashcardContainer');
     const subjectList = document.getElementById('subjectList');
     const startStudyingBtn = document.getElementById('startStudying');
     const backToSubjectsBtn = document.getElementById('backToSubjects');
+    const backToModesBtn = document.getElementById('backToModes');
     const flashcard = document.getElementById('flashcard');
     const questionElement = document.getElementById('question');
     const answerElement = document.getElementById('answer');
@@ -13,8 +15,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const difficultCardBtn = document.getElementById('difficultCard');
     const progressElement = document.getElementById('progress');
     const toggleFocusModeBtn = document.getElementById('toggleFocusMode');
+    const simpleModeBtn = document.getElementById('simpleModeBtn');
+    const multipleChoiceModeBtn = document.getElementById('multipleChoiceModeBtn');
+    const optionsContainer = document.getElementById('optionsContainer');
+    const optionsElement = document.getElementById('options');
     const body = document.body;
     const controlsDiv = document.querySelector('.controls');
+    const settingsIcon = document.getElementById('settingsIcon');
+    const settingsModal = document.getElementById('settingsModal');
+    const saveSettingsBtn = document.getElementById('saveSettings');
+    const resetSettingsBtn = document.getElementById('resetSettings');
+    const closeSettingsBtn = document.getElementById('closeSettings');
     
     // Variáveis de estado
     let currentDeck = [];
@@ -24,28 +35,98 @@ document.addEventListener('DOMContentLoaded', function() {
     let isFocusMode = false;
     let cardNotes = JSON.parse(localStorage.getItem('cardNotes')) || {};
     let isNoteOpen = false;
+    let isMultipleChoiceMode = false;
+    let currentMultipleChoiceCard = null;
+    
+    // Configurações de teclado
+    let keyConfig = {
+        prevKey: localStorage.getItem('prevKey') || 'v',
+        nextKey: localStorage.getItem('nextKey') || 'b',
+        flipKey: localStorage.getItem('flipKey') || ' ',
+        focusKey: localStorage.getItem('focusKey') || 'f',
+        noteKey: localStorage.getItem('noteKey') || 'n'
+    };
     
     // Inicialização
     init();
     
     function init() {
-        // Carrega as matérias disponíveis
-        loadSubjects();
-        
         // Configura eventos
         setupEventListeners();
         
+        // Carrega configurações
+        loadKeyConfig();
+        
         // Adiciona instruções de teclado
         addKeyboardInstructions();
+    }
+    
+    function loadKeyConfig() {
+        document.getElementById('prevKey').value = keyConfig.prevKey;
+        document.getElementById('nextKey').value = keyConfig.nextKey;
+        document.getElementById('flipKey').value = keyConfig.flipKey;
+        document.getElementById('focusKey').value = keyConfig.focusKey;
+        document.getElementById('noteKey').value = keyConfig.noteKey;
+    }
+    
+    function saveKeyConfig() {
+        keyConfig = {
+            prevKey: document.getElementById('prevKey').value.toLowerCase(),
+            nextKey: document.getElementById('nextKey').value.toLowerCase(),
+            flipKey: document.getElementById('flipKey').value.toLowerCase(),
+            focusKey: document.getElementById('focusKey').value.toLowerCase(),
+            noteKey: document.getElementById('noteKey').value.toLowerCase()
+        };
+        
+        localStorage.setItem('prevKey', keyConfig.prevKey);
+        localStorage.setItem('nextKey', keyConfig.nextKey);
+        localStorage.setItem('flipKey', keyConfig.flipKey);
+        localStorage.setItem('focusKey', keyConfig.focusKey);
+        localStorage.setItem('noteKey', keyConfig.noteKey);
+    }
+    
+    function resetKeyConfig() {
+        keyConfig = {
+            prevKey: 'v',
+            nextKey: 'b',
+            flipKey: ' ',
+            focusKey: 'f',
+            noteKey: 'n'
+        };
+        
+        localStorage.removeItem('prevKey');
+        localStorage.removeItem('nextKey');
+        localStorage.removeItem('flipKey');
+        localStorage.removeItem('focusKey');
+        localStorage.removeItem('noteKey');
+        
+        loadKeyConfig();
     }
     
     function addKeyboardInstructions() {
         const instructions = document.createElement('div');
         instructions.className = 'keyboard-instructions';
         instructions.innerHTML = `
-            <small>Teclas: <strong>V</strong> (Voltar) | <strong>B</strong> (Avançar) | <strong>Espaço</strong> (Girar) | <strong>N</strong> (Notas)</small>
+            <small>Teclas: <strong>${keyConfig.prevKey.toUpperCase()}</strong> (Voltar) | 
+            <strong>${keyConfig.nextKey.toUpperCase()}</strong> (Avançar) | 
+            <strong>${keyConfig.flipKey === ' ' ? 'Espaço' : keyConfig.flipKey.toUpperCase()}</strong> (Girar) | 
+            <strong>${keyConfig.focusKey.toUpperCase()}</strong> (Foco) | 
+            <strong>${keyConfig.noteKey.toUpperCase()}</strong> (Notas)</small>
         `;
         controlsDiv.insertAdjacentElement('afterend', instructions);
+    }
+    
+    function updateKeyboardInstructions() {
+        const instructions = document.querySelector('.keyboard-instructions');
+        if (instructions) {
+            instructions.innerHTML = `
+                <small>Teclas: <strong>${keyConfig.prevKey.toUpperCase()}</strong> (Voltar) | 
+                <strong>${keyConfig.nextKey.toUpperCase()}</strong> (Avançar) | 
+                <strong>${keyConfig.flipKey === ' ' ? 'Espaço' : keyConfig.flipKey.toUpperCase()}</strong> (Girar) | 
+                <strong>${keyConfig.focusKey.toUpperCase()}</strong> (Foco) | 
+                <strong>${keyConfig.noteKey.toUpperCase()}</strong> (Notas)</small>
+            `;
+        }
     }
     
     function loadSubjects() {
@@ -58,34 +139,112 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Cria checkboxes para cada matéria disponível
-        for (const subjectId in flashcardsData) {
+        // Filtra matérias que têm questões no modo atual
+        const validSubjects = Object.keys(flashcardsData).filter(subjectId => {
+            const subject = flashcardsData[subjectId];
+            if (isMultipleChoiceMode) {
+                return subject.multipleChoice && subject.multipleChoice.length > 0;
+            } else {
+                return subject.questions && subject.questions.length > 0;
+            }
+        });
+        
+        if (validSubjects.length === 0) {
+            subjectList.innerHTML = `
+                <p class="no-subjects">
+                    Nenhuma matéria com questões no modo ${isMultipleChoiceMode ? 'Múltipla Escolha' : 'Simples'}.
+                    <button id="tryOtherMode" class="back-btn" style="margin-top: 1rem;">
+                        <i class="fas fa-sync-alt"></i> Tentar outro modo
+                    </button>
+                </p>
+            `;
+            
+            document.getElementById('tryOtherMode').addEventListener('click', () => {
+                isMultipleChoiceMode = !isMultipleChoiceMode;
+                loadSubjects();
+            });
+            
+            return;
+        }
+        
+        // Cria checkboxes para cada matéria válida
+        for (const subjectId of validSubjects) {
             const subject = flashcardsData[subjectId];
             
             const label = document.createElement('label');
             label.innerHTML = `
                 <input type="checkbox" value="${subjectId}">
                 ${subject.name}
-                <span class="question-count">(${subject.questions.length} questões)</span>
+                <span class="question-count">(${isMultipleChoiceMode ? 
+                    subject.multipleChoice.length : 
+                    subject.questions.length} questões)</span>
             `;
             subjectList.appendChild(label);
         }
     }
     
     function setupEventListeners() {
+        simpleModeBtn.addEventListener('click', () => {
+            isMultipleChoiceMode = false;
+            modeSelection.classList.add('hidden');
+            subjectSelection.classList.remove('hidden');
+            loadSubjects();
+        });
+        
+        multipleChoiceModeBtn.addEventListener('click', () => {
+            isMultipleChoiceMode = true;
+            modeSelection.classList.add('hidden');
+            subjectSelection.classList.remove('hidden');
+            loadSubjects();
+        });
+        
         startStudyingBtn.addEventListener('click', startStudying);
         backToSubjectsBtn.addEventListener('click', showSubjectSelection);
+        backToModesBtn.addEventListener('click', showModeSelection);
         flashcard.addEventListener('click', flipCard);
         prevCardBtn.addEventListener('click', showPreviousCard);
         nextCardBtn.addEventListener('click', showNextCard);
         difficultCardBtn.addEventListener('click', markAsDifficult);
         toggleFocusModeBtn.addEventListener('click', toggleFocusMode);
         
+        // Configurações
+        settingsIcon.addEventListener('click', () => {
+            settingsModal.classList.remove('hidden');
+        });
+        
+        saveSettingsBtn.addEventListener('click', () => {
+            saveKeyConfig();
+            updateKeyboardInstructions();
+            settingsModal.classList.add('hidden');
+        });
+        
+        resetSettingsBtn.addEventListener('click', () => {
+            resetKeyConfig();
+            updateKeyboardInstructions();
+        });
+        
+        closeSettingsBtn.addEventListener('click', () => {
+            settingsModal.classList.add('hidden');
+        });
+        
         // Eventos de teclado
         document.addEventListener('keydown', handleKeyPress);
         
         // Eventos de touch para mobile
         setupTouchEvents();
+    }
+    
+    function showModeSelection() {
+        modeSelection.classList.remove('hidden');
+        subjectSelection.classList.add('hidden');
+        flashcardContainer.classList.add('hidden');
+        disableFocusMode();
+    }
+    
+    function showSubjectSelection() {
+        subjectSelection.classList.remove('hidden');
+        flashcardContainer.classList.add('hidden');
+        disableFocusMode();
     }
     
     function startStudying() {
@@ -100,8 +259,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Criar baralho com as questões das matérias selecionadas
         currentDeck = [];
         selectedSubjects.forEach(subjectId => {
-            if (flashcardsData[subjectId] && flashcardsData[subjectId].questions) {
-                currentDeck = currentDeck.concat(flashcardsData[subjectId].questions);
+            if (flashcardsData[subjectId]) {
+                if (isMultipleChoiceMode && flashcardsData[subjectId].multipleChoice) {
+                    currentDeck = currentDeck.concat(flashcardsData[subjectId].multipleChoice);
+                } else if (!isMultipleChoiceMode && flashcardsData[subjectId].questions) {
+                    currentDeck = currentDeck.concat(flashcardsData[subjectId].questions);
+                }
             }
         });
         
@@ -123,12 +286,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Alternar para a view de flashcards
         subjectSelection.classList.add('hidden');
         flashcardContainer.classList.remove('hidden');
-    }
-    
-    function showSubjectSelection() {
-        subjectSelection.classList.remove('hidden');
-        flashcardContainer.classList.add('hidden');
-        disableFocusMode();
+        
+        // Mostrar/ocultar container de opções conforme o modo
+        if (isMultipleChoiceMode) {
+            optionsContainer.classList.remove('hidden');
+        } else {
+            optionsContainer.classList.add('hidden');
+        }
     }
     
     function flipCard() {
@@ -145,8 +309,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         const card = currentDeck[currentCardIndex];
-        questionElement.textContent = card.question;
-        answerElement.textContent = card.answer;
+        
+        if (isMultipleChoiceMode) {
+            currentMultipleChoiceCard = card;
+            questionElement.textContent = card.question;
+            answerElement.textContent = card.explanation || "Explicação não disponível";
+            
+            // Limpar opções anteriores
+            optionsElement.innerHTML = '';
+            
+            // Adicionar novas opções
+            card.options.forEach((option, index) => {
+                const optionElement = document.createElement('div');
+                optionElement.className = 'option';
+                optionElement.textContent = option;
+                optionElement.addEventListener('click', () => checkAnswer(index));
+                optionsElement.appendChild(optionElement);
+            });
+        } else {
+            questionElement.textContent = card.question;
+            answerElement.textContent = card.answer;
+        }
         
         // Atualizar progresso
         progressElement.textContent = `${currentCardIndex + 1}/${currentDeck.length}`;
@@ -158,6 +341,27 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Adicionar ou atualizar o ícone de notas
         addNoteIcon();
+    }
+    
+    function checkAnswer(selectedIndex) {
+        if (!currentMultipleChoiceCard) return;
+        
+        const options = document.querySelectorAll('.option');
+        const correctIndex = currentMultipleChoiceCard.answer;
+        
+        options.forEach((option, index) => {
+            option.classList.remove('correct', 'incorrect');
+            if (index === correctIndex) {
+                option.classList.add('correct');
+            } else if (index === selectedIndex && index !== correctIndex) {
+                option.classList.add('incorrect');
+            }
+        });
+        
+        // Girar o card para mostrar a explicação
+        if (!flashcard.classList.contains('flipped')) {
+            flipCard();
+        }
     }
     
     function addNoteIcon() {
@@ -230,7 +434,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function positionNoteContainer(container) {
-        // Posiciona o container de notas de forma consistente em ambos os modos
         container.style.position = 'absolute';
         container.style.top = '50%';
         container.style.left = '50%';
@@ -242,7 +445,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function getCurrentCardId() {
         const card = currentDeck[currentCardIndex];
-        return `${selectedSubjects.join('-')}-${card.question.substring(0, 20)}`;
+        if (isMultipleChoiceMode) {
+            return `mc-${selectedSubjects.join('-')}-${card.question.substring(0, 20)}`;
+        } else {
+            return `${selectedSubjects.join('-')}-${card.question.substring(0, 20)}`;
+        }
     }
     
     function saveNote() {
@@ -324,27 +531,23 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleKeyPress(e) {
         if (flashcardContainer.classList.contains('hidden') || isNoteOpen) return;
         
-        switch(e.key.toLowerCase()) {
-            case 'v':
-                showPreviousCard();
-                break;
-            case 'b':
-                showNextCard();
-                break;
-            case ' ':
-                flipCard();
-                e.preventDefault();
-                break;
-            case 'f':
-                toggleFocusMode();
-                break;
-            case 'n':
-                const noteIcon = document.querySelector('.note-icon');
-                if (noteIcon) {
-                    noteIcon.click();
-                    isNoteOpen = true;
-                }
-                break;
+        const key = e.key.toLowerCase();
+        
+        if (key === keyConfig.prevKey) {
+            showPreviousCard();
+        } else if (key === keyConfig.nextKey) {
+            showNextCard();
+        } else if (key === keyConfig.flipKey) {
+            flipCard();
+            e.preventDefault();
+        } else if (key === keyConfig.focusKey) {
+            toggleFocusMode();
+        } else if (key === keyConfig.noteKey) {
+            const noteIcon = document.querySelector('.note-icon');
+            if (noteIcon) {
+                noteIcon.click();
+                isNoteOpen = true;
+            }
         }
     }
     
