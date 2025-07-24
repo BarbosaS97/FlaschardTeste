@@ -5,11 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Flashcards</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="app-container">
-        <div class="subject-selection" id="subjectSelection">
-            <h1>Selecione as Matérias</h1>
+        <div class="settings-icon" id="settingsIcon">
+            <i class="fas fa-cog"></i>
+        </div>
+
+        <div class="settings-modal hidden" id="settingsModal">
+            <div class="settings-content">
+                <h2>Configurações</h2>
+                <div class="settings-group">
+                    <h3>Teclas de Atalho</h3>
+                    <div class="key-config">
+                        <label>Anterior:</label>
+                        <input type="text" maxlength="1" id="prevKey" value="v">
+                    </div>
+                    <div class="key-config">
+                        <label>Próximo:</label>
+                        <input type="text" maxlength="1" id="nextKey" value="b">
+                    </div>
+                    <div class="key-config">
+                        <label>Girar Card:</label>
+                        <input type="text" maxlength="1" id="flipKey" value=" ">
+                    </div>
+                    <div class="key-config">
+                        <label>Modo Foco:</label>
+                        <input type="text" maxlength="1" id="focusKey" value="f">
+                    </div>
+                    <div class="key-config">
+                        <label>Anotações:</label>
+                        <input type="text" maxlength="1" id="noteKey" value="n">
+                    </div>
+                </div>
+                <div class="settings-buttons">
+                    <button id="saveSettings">Salvar</button>
+                    <button id="resetSettings">Padrão</button>
+                    <button id="closeSettings">Fechar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mode-selection" id="modeSelection">
+            <h1>Selecione o Modo de Estudo</h1>
+            <div class="mode-options">
+                <button id="simpleModeBtn" class="mode-btn">Flashcards Simples</button>
+                <button id="multipleChoiceModeBtn" class="mode-btn">Múltipla Escolha</button>
+            </div>
+        </div>
+
+        <div class="subject-selection hidden" id="subjectSelection">
+            <div class="subject-header">
+                <button id="backToModes" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar</button>
+                <h1>Selecione as Matérias</h1>
+            </div>
             <div class="subject-list" id="subjectList">
                 <!-- As matérias serão carregadas dinamicamente pelo JavaScript -->
             </div>
@@ -18,7 +68,7 @@
 
         <div class="flashcard-container hidden" id="flashcardContainer">
             <div class="header">
-                <button id="backToSubjects">← Voltar</button>
+                <button id="backToSubjects" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar</button>
                 <div class="header-right">
                     <button id="toggleFocusMode" class="focus-btn">Modo Foco</button>
                     <div class="progress" id="progress">0/0</div>
@@ -34,6 +84,10 @@
                         <div class="answer" id="answer"></div>
                     </div>
                 </div>
+            </div>
+
+            <div class="options-container hidden" id="optionsContainer">
+                <div class="options" id="options"></div>
             </div>
 
             <div class="controls">
